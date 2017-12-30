@@ -4,8 +4,6 @@ cmake_minimum_required(VERSION 2.6)
 
 project(linenoise)
 
-set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/build")
-
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE string "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel." FORCE)
 endif()
