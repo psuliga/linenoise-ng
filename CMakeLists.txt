@@ -89,17 +89,6 @@ install(TARGETS linenoise DESTINATION lib)
 # headers
 install(FILES include/linenoise.h DESTINATION include)
 
-# build example
-add_executable(
-  example
-  tst/example.c
-)
-
-target_link_libraries(
-  example
-  linenoise
-)
-
 # packaging
 include(CPack)
 
