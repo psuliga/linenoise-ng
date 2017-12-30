@@ -940,8 +940,8 @@ static struct termios orig_termios; /* in order to restore at exit */
 
 static KillRing killRing;
 
-static int rawmode = 0; /* for atexit() function to check if restore is needed*/
-static int atexit_registered = 0; /* register atexit just 1 time */
+//static int rawmode = 0; /* for atexit() function to check if restore is needed*/
+//static int atexit_registered = 0; /* register atexit just 1 time */
 static int historyMaxLen = LINENOISE_DEFAULT_HISTORY_MAX_LEN;
 static int historyLen = 0;
 static int historyIndex = 0;
@@ -1042,7 +1042,7 @@ static void disableRawMode(void) {
 }
 
 // At exit we'll try to fix the terminal to the initial conditions
-static void linenoiseAtExit(void) { disableRawMode(); }
+//static void linenoiseAtExit(void) { disableRawMode(); }
 
 static int getScreenColumns(void) {
   int cols;
@@ -1072,7 +1072,7 @@ static int getScreenRows(void) {
   return (rows > 0) ? rows : 24;
 }
 
-static void setDisplayAttribute(bool enhancedDisplay, bool error) {
+static void setDisplayAttribute(bool enhancedDisplay, bool error __attribute__((unused))) {
 #ifdef _WIN32
   if (enhancedDisplay) {
     CONSOLE_SCREEN_BUFFER_INFO inf;
